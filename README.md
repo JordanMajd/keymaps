@@ -9,6 +9,8 @@ Got sick of losing all my keymaps so here is a repo for me to find them.
 | Pok3r           | Stock    | Cherry MX Blue     |
 | Model M         | Soarers  | Buckling Springs   |
 
+![Planck keyboard with DSA Deep Space keycaps](/assets/planck.jpg)
+
 ## Getting Started
 
 1. Upload keymap to configurator.
