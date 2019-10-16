@@ -15,6 +15,19 @@ Got sick of losing all my keymaps so here is a repo for me to find them.
 
 ## Getting Started
 
+Clone the repository recursively if you would like to include the submodules:
+
+```bash
+git clone --recursive git@github.com:JordanMajd/keymaps.git
+```
+
+Otherwise, after a normal clone you can init the submodules with:
+
+```bash
+git clone git@github.com:JordanMajd/keymaps.git
+git submodule update --init
+```
+
 1. Upload keymap to [configurator][qmk_conf].
 1. Press compile.
 1. Download firmware.
