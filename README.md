@@ -30,28 +30,19 @@ git submodule update --init
 
 Keyboards live in this repository and are symlinked into the QMK submodule (at least the ones that run QMK...)
 
+To make a new keyboard you can use the following directory structure:
+
 ```bash
 # make directories in this repo
 mkdir keyboards/<keyboard>
 mkdir keyboards/<keyboard>/<revision>
 mkdir keyboards/<keyboard>/keymaps/<keymap>
-
-# if new keyboard this is all you need to do
-ln -s keyboards/<keyboard> qmk_firmware/keyboards/<keyboard>
-# if existing keyboard will need to link both revision and map
-ln -s keyboards/<keyboard>/<revision> qmk_firmware/keyboards/<keyboard>/<revision>
-ln -s keyboards/<keyboard>/keymaps/<keymap> qmk_firmware/keyboards/<keyboard>/keymaps/<keymap>
 ```
 
-I probably need to make a script that automates that or rethink my decision since that won't survive a clone...
-
-You can then CD into QMK and build just as if you were using it:
+To build just run the associated script:
 
 ```bash
-cd qmk_firmware
-make <keyboard>/<revision>:<keymap>
-# burn it to the board
-make <keyboard>/<revision>:<keymap>:dfu
+./planck.sh
 ```
 
 Happy hacking.
