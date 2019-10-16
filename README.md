@@ -15,20 +15,34 @@ Got sick of losing all my keymaps so here is a repo for me to find them.
 
 ## Getting Started
 
-Clone the repository recursively if you would like to include the submodules:
+Clone the repository recursively to include the submodule:
 
 ```bash
 git clone --recursive git@github.com:JordanMajd/keymaps.git
 ```
 
-Otherwise, after a normal clone you can init the submodules with:
+Alternatively, after a normal clone you can init the submodules with:
 
 ```bash
 git clone git@github.com:JordanMajd/keymaps.git
 git submodule update --init
 ```
 
-Keyboards live in this repository and are symlinked into the QMK submodule (at least the ones that run QMK...)
+QMK has some submodules of its own that need made
+
+```bash
+cd qmk_firmware
+make git-submodule
+```
+
+To build and flash a keyboard run the associated script and reset the keyboard:
+
+```bash
+# Planck reset = Raise + Lower + Q or button on back
+./planck.sh
+```
+
+### Define your own keyboard
 
 To make a new keyboard you can use the following directory structure:
 
@@ -39,17 +53,12 @@ mkdir keyboards/<keyboard>/<revision>
 mkdir keyboards/<keyboard>/keymaps/<keymap>
 ```
 
-To build just run the associated script:
-
-```bash
-./planck.sh
-```
+Then create a script similar to the one found in `planck.sh`.
 
 Happy hacking.
 
 ## Roadmap
 
-- Write script to add new boards to repo or symlinks on clone.
 - Add Infinity layout.
 - Add Model M Soarers keymap.
 - Unlock Pok3r when JTAG programmer arrives.
