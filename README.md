@@ -34,6 +34,7 @@ QMK has some submodules of its own that need made
 cd qmk_firmware
 make git-submodule
 ```
+### Building and flashing
 
 To build and flash a keyboard run the associated script and reset the keyboard:
 
