@@ -1,6 +1,6 @@
 # Keymaps
 
-[![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
+[![GPL V2 licensed](https://img.shields.io/badge/license-GPL-blue.svg)](/LICENSE)
 
 Got sick of losing all my keymaps so here is a repo for me to find them.
 
@@ -28,14 +28,37 @@ git clone git@github.com:JordanMajd/keymaps.git
 git submodule update --init
 ```
 
-1. Upload keymap to [configurator][qmk_conf].
-1. Press compile.
-1. Download firmware.
-1. Flash with [QMK toolbox](https://github.com/qmk/qmk_toolbox/releases)
-1. Have fun.
+Keyboards live in this repository and are symlinked into the QMK submodule (at least the ones that run QMK...)
+
+```bash
+# make directories in this repo
+mkdir keyboards/<keyboard>
+mkdir keyboards/<keyboard>/<revision>
+mkdir keyboards/<keyboard>/keymaps/<keymap>
+
+# if new keyboard this is all you need to do
+ln -s keyboards/<keyboard> qmk_firmware/keyboards/<keyboard>
+# if existing keyboard will need to link both revision and map
+ln -s keyboards/<keyboard>/<revision> qmk_firmware/keyboards/<keyboard>/<revision>
+ln -s keyboards/<keyboard>/keymaps/<keymap> qmk_firmware/keyboards/<keyboard>/keymaps/<keymap>
+```
+
+I probably need to make a script that automates that or rethink my decision since that won't survive a clone...
+
+You can then CD into QMK and build just as if you were using it:
+
+```bash
+cd qmk_firmware
+make <keyboard>/<revision>:<keymap>
+# burn it to the board
+make <keyboard>/<revision>:<keymap>:dfu
+```
+
+Happy typing.
 
 ## Roadmap
 
+- Write script to add new boards to repo or symlinks on clone.
 - Instructions on how to flash.
 - Add Infinity layout.
 - Add Model M Soarers keymap.
@@ -44,6 +67,7 @@ git submodule update --init
 
 ## Further Reading
 
+- [QMK Firmware][qmk_firm]
 - [QMK Configurator][qmk_conf]
 - [QMK Toolbox](qmk_tool)
 - [Infinity Keyboard](inf)
@@ -51,8 +75,12 @@ git submodule update --init
 
 ## License
 
-- MIT, see [LICENSE](/LICENSE) for more details.
+This project is based on [QMK][qmk_firm] which which in turn is based on [TMK][tmk_firm].
 
+- GPL V2, see [LICENSE](/LICENSE) for more details.
+
+[tmk_firm]: https://github.com/tmk/tmk_keyboard
+[qmk_firm]: https://github.com/qmk/qmk_firmware
 [qmk_conf]: https://config.qmk.fm/#/planck/rev5/LAYOUT_ortho_4x12
 [qmk_tool]: https://github.com/qmk/qmk_toolbox/releases
 [inf]: https://input.club/devices/infinity-keyboard/
