@@ -1,4 +1,4 @@
-# Keymaps
+# Keymaps ⌨️
 
 [![GPL V2 licensed](https://img.shields.io/badge/license-GPL-blue.svg)](/LICENSE)
 
@@ -54,16 +54,14 @@ make <keyboard>/<revision>:<keymap>
 make <keyboard>/<revision>:<keymap>:dfu
 ```
 
-Happy typing.
+Happy hacking.
 
 ## Roadmap
 
 - Write script to add new boards to repo or symlinks on clone.
-- Instructions on how to flash.
 - Add Infinity layout.
 - Add Model M Soarers keymap.
 - Unlock Pok3r when JTAG programmer arrives.
-- Support `rules.mk` to enable backlight leds on planck.
 
 ## Further Reading
 
