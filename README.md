@@ -109,8 +109,5 @@ This project is based on [QMK][qmk_firm] which which in turn is based on [TMK][t
 [inf]: https://input.club/devices/infinity-keyboard/
 [planck]: https://olkb.com/planck
 [pok3r]: http://www.vortexgear.tw/vortex2_2.asp?kind=47&kind2=220&kind3=&kind4=998
-<<<<<<< HEAD
 [kbfirm]: https://kbfirmware.com/
 [klayout]: http://www.keyboard-layout-editor.com/#/
-=======
->>>>>>> 9327a3626a9b580ab5d112c4e09557b4f2099eba
