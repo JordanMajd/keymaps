@@ -56,6 +56,28 @@ make <keyboard>/<revision>:<keymap>:dfu
 
 Happy hacking.
 
+
+### Thanos' Keyboard
+
+Thanos wanted a keyboard too, so we built him one using a pro micro and Kailh Pro Light Green switches.
+
+Use `layout.hex` or make your own firmware.
+
+Create layout w/ [Keyboard Layout Editor](keylayout) or just do text:
+
+```bash
+["T","R"],
+["E","X"]
+```
+
+Build firmware w/ [Keyboard Firmware](kbfirm) set rows:
+
+Rows: [B3, B1]
+Cols: [E6, D7]
+
+Tap reset to ground twice then quickly flash w/ avrdude: `C:\Users\<USERNAME>\AppData\Local\QMK\QMK Toolbox\0.0.14\avrdude.exe" -v -p atmega32u4 -PCOM5 -b57600 -c avr109 -D -U flash:w:"t_rex/layout.hex":i`
+
+
 ## Roadmap
 
 - Write script to add new boards to repo or symlinks on clone.
@@ -70,6 +92,8 @@ Happy hacking.
 - [QMK Toolbox](qmk_tool)
 - [Infinity Keyboard](inf)
 - [Planck](planck)
+- [KBFirmware](kbfirm)
+- [Keyboard Layout Editor](keylayout)
 
 ## License
 
@@ -84,3 +108,5 @@ This project is based on [QMK][qmk_firm] which which in turn is based on [TMK][t
 [inf]: https://input.club/devices/infinity-keyboard/
 [planck]: https://olkb.com/planck
 [pok3r]: http://www.vortexgear.tw/vortex2_2.asp?kind=47&kind2=220&kind3=&kind4=998
+[kbfirm]: https://kbfirmware.com/
+[klayout]: http://www.keyboard-layout-editor.com/#/
