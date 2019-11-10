@@ -10,6 +10,7 @@ Got sick of losing all my keymaps so here is a repo for me to find them.
 | Infinity Rev. 1 | QMK      | Matias Quiet Click |
 | Pok3r           | Stock    | Cherry MX Blue     |
 | Model M         | Soarers  | Buckling Springs   |
+| T-Rex           | QMK      | Kailh Pro L Green  |
 
 ![Planck keyboard with DSA Deep Space keycaps](/assets/planck.jpg)
 
@@ -85,6 +86,8 @@ Tap reset to ground twice then quickly flash w/ avrdude: `C:\Users\<USERNAME>\Ap
 - Add Infinity layout.
 - Add Model M Soarers keymap.
 - Unlock Pok3r when JTAG programmer arrives.
+- Reset combo for Thanos' board.
+- Build script for Thanos' board.
 
 ## Further Reading
 
